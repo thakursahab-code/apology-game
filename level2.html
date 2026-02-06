@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level 2</title>
+<style>
+body{margin:0;height:100vh;background:#ff7eb3;color:white;font-family:sans-serif;text-align:center;}
+#box{position:relative;height:70vh;}
+button{
+  position:absolute;
+  padding:12px 18px;border:none;border-radius:25px;
+  background:#ff4d6d;color:white;
+}
+</style>
+</head>
+<body>
+<h2>Abhi bhi gussa ho? 😤</h2>
+<p>Buttons pakad ke dikhao 😌</p>
+<div id="box"></div>
+
+<script>
+const box=document.getElementById("box");
+for(let i=0;i<10;i++){
+  let b=document.createElement("button");
+  b.innerText="Nahi 😤";
+  move(b);
+  b.onclick=()=>{navigator.vibrate&&navigator.vibrate(40);move(b);}
+  box.appendChild(b);
+}
+setTimeout(()=>location.href="level3.html",12000);
+function move(b){
+  b.style.top=Math.random()*350+"px";
+  b.style.left=Math.random()*250+"px";
+}
+</script>
+</body>
+</html>
